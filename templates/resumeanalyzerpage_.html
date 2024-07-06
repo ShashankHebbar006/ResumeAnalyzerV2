@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File</title>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form action="/resumeanalyzer" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if message %}
+        {% if 'Error' in message %}
+            <div id="message">
+                <p> {{ message }} </p>
+            </div>
+        {% else %}
+            <p> {{ output }} </p>
+            <!-- {% if "Error" in message %}
+            <div id="file-uploaded-successfully">
+                <form action="/resumeanalyzer" method="post" enctype="multipart/form-data">
+                    <input type="text" name="Enter Job Description">
+                    <input type="submit" value="Submit">
+                </form> 
+            </div>
+            {% endif %} -->
+            {% endif %}
+    {% endif %}
+</body>
+</html>
